@@ -1,3 +1,4 @@
+library(reshape2) # Install with command `install.packages('reshape2')` if missing this package
 
 # Get names for the features
 feature_names <- read.table("UCI HAR Dataset/features.txt", header = FALSE, col.names = c("id", "name"))
@@ -32,6 +33,12 @@ data_frame$activity[data_frame$activity == 4] <- "SITTING"
 data_frame$activity[data_frame$activity == 5] <- "STANDING"
 data_frame$activity[data_frame$activity == 6] <- "LAYING"
 
-# Output to file
+# First (large) output to file
 write.table(data_frame, 'uci_har_data_output_large.txt', row.name = FALSE)
 
+# Find the average of each variable for each activity-and-subject combo
+melted_data <- melt(data_frame, id = c("subject", "activity"))
+recast_data <- dcast(melted_data, subject + activity ~ variable, mean)
+
+# Second (small) output to file
+write.table(recast_data, 'uci_har_data_output_small.txt', row.name = FALSE)

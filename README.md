@@ -6,6 +6,8 @@ A script to simplify
 so that it includes only average and standard deviation data. It follows principles of tidy data outlined in
 [a paper by Hadley Wickham of RStudio](http://www.jstatsoft.org/v59/i10/paper).
 
+The script uses Wickham's `reshape2` library, so it will have to be installed before use. If you do not already have it, you'll have to install it! Type `install.packages('reshape2')` at the R prompt.
+
 Input
 -----
 
