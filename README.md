@@ -18,6 +18,8 @@ Output
 
 Upon executing, the script creates two output files:
   * `uci_har_data_output_large.txt` containing mean and standard deviation measurements extracted from the dataset, and,
-  * `uci_har_data_output_large.txt` containing average of each variable for each activity and each subject from the previous file.
+  * `uci_har_data_output_small.txt` containing average of each variable for each activity and each subject from the previous file.
+
+See CodeBook.md for details about the contents of these files.
 
 Created by John Skinner on 23 August 2015.
