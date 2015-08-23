@@ -24,6 +24,14 @@ train_frame <- cbind(train_ids, train_data_sub)
 # Combine test and train dataframes
 data_frame <- rbind(test_frame, train_frame)
 
+# Replace activity numbers with names
+data_frame$activity[data_frame$activity == 1] <- "WALKING"
+data_frame$activity[data_frame$activity == 2] <- "WALKING_UPSTAIRS"
+data_frame$activity[data_frame$activity == 3] <- "WALKING_DOWNSTAIRS"
+data_frame$activity[data_frame$activity == 4] <- "SITTING"
+data_frame$activity[data_frame$activity == 5] <- "STANDING"
+data_frame$activity[data_frame$activity == 6] <- "LAYING"
+
 # Output to file
-write.table(data_frame, 'uci_har_data_output_large.txt')
+write.table(data_frame, 'uci_har_data_output_large.txt', row.name = FALSE)
 
