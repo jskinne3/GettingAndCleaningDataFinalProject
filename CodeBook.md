@@ -1,3 +1,3 @@
-# A markdown file named README.md
+# A markdown file named CodeBook.md
 
 For repo GettingAndCleaningDataFinalProject
